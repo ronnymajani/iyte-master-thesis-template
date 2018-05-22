@@ -1,3 +1,11 @@
+*
+!.gitignore
+!iyte.cls
+!README.md
+!.LICENSE.md
+
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
