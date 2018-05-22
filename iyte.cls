@@ -49,27 +49,3 @@
 
 
 
-
-
-
-
-
-\RequirePackage{fancyhdr}
-\fancypagestyle{firstpage}{
-	%
-	\fancyhf{}
-	% clear all six fields
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancypagestyle{followingpage}{
-	%
-	\fancyhf{}
-	% clear all six fields
-	\fancyhead[RE,LO]{\show@committee, \show@date}
-	\fancyhead[LE,RO]{page \thepage}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\pagestyle{followingpage}
-\AtBeginDocument{\thispagestyle{firstpage}}
