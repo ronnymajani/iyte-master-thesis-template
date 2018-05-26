@@ -39,15 +39,17 @@
 
 % Font Size
 %----------------------------
+\newcommand{\thesisbigfont}{\fontsize{16pt}{24pt}\selectfont\bfseries}
+\newcommand{\thesismediumfont}{\fontsize{14pt}{21pt}\selectfont}
 \RequirePackage{titlesec}
-\titleformat*{\section}{\fontsize{14pt}{21pt}\selectfont}
-\titleformat*{\subsection}{\fontsize{14pt}{21pt}\selectfont}
-\titleformat*{\subsubsection}{\fontsize{14pt}{21pt}\selectfont}
-\titleformat*{\paragraph}{\fontsize{14pt}{21pt}\selectfont}
-\titleformat*{\subparagraph}{\fontsize{14pt}{21pt}\selectfont}
+\titleformat*{\section}{\thesismediumfont}
+\titleformat*{\subsection}{\thesismediumfont}
+\titleformat*{\subsubsection}{\thesismediumfont}
+\titleformat*{\paragraph}{\thesismediumfont}
+\titleformat*{\subparagraph}{\thesismediumfont}
 
 \titleformat{\chapter}[display]
-{\fontsize{16pt}{24pt}\selectfont\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{16pt}{24pt}\selectfont}
+{\thesisbigfont\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\thesisbigfont}
 
 
 % Spacing
@@ -163,6 +165,22 @@
 	\newcommand{\showthesisdeanofgraduateschool}{\thesissignaturebox{#1}{Dean of the Graduate School of Engineering and Sciences}}
 }
 \newcommand{\signaturedate}[3]{\newcommand{\showsignaturedate}{#1/#2/#3}}
+
+
+
+% Abstract:
+%-----------
+\makeatletter
+\renewenvironment{abstract}{%
+	\begin{center}%
+		{\bfseries\thesisbigfont ABSTRACT}\\
+		 \vspace{1.5em}
+		 
+		{\thesismediumfont\showthesistitle}\\
+		 \vspace{1.5em}
+	\end{center}%
+	\quotation}
+\makeatother
 
 
 
