@@ -25,6 +25,7 @@
 \RequirePackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 
+
 % Font Family
 %----------------------------
 \RequirePackage[utf8]{inputenc}  %TODO: change to UTF-8?
@@ -37,19 +38,43 @@
 % https://tex.stackexchange.com/a/152749
 
 
-% Font Size
+% Sections
+%----------------------------
+% https://tex.stackexchange.com/a/392015
+\setcounter{secnumdepth}{6}
+\makeatletter
+\renewcommand\subparagraph{%
+	\@startsection {subparagraph}{5}{\z@ }{3.25ex \@plus 1ex
+		\@minus .2ex}{-1em}{\normalfont \normalsize \bfseries }}%
+\makeatother
+
+
+% Sections
 %----------------------------
 \newcommand{\thesisbigfont}{\fontsize{16pt}{24pt}\selectfont\bfseries}
 \newcommand{\thesismediumfont}{\fontsize{14pt}{21pt}\selectfont}
 \RequirePackage{titlesec}
-\titleformat*{\section}{\thesismediumfont}
-\titleformat*{\subsection}{\thesismediumfont}
-\titleformat*{\subsubsection}{\thesismediumfont}
-\titleformat*{\paragraph}{\thesismediumfont}
-\titleformat*{\subparagraph}{\thesismediumfont}
 
+% Format Sections
+\titleformat{\section}{\bfseries\thesismediumfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\thesismediumfont}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\thesismediumfont}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\bfseries\thesismediumfont}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}{\bfseries\thesismediumfont}{\thesubparagraph}{1em}{}
+
+% Format Chapters
 \titleformat{\chapter}[display]
-{\thesisbigfont\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\thesisbigfont}
+{\thesisbigfont\bfseries\centering}{\chaptertitlename\  \thechapter}{3ex}{}
+\renewcommand\chaptername{CHAPTER}
+
+% Section Spacing
+\titlespacing*{\section}{0pt}{3ex}{3ex}
+\titlespacing*{\section}{0pt}{3ex}{3ex}
+\titlespacing*{\subsection}{0pt}{3ex}{3ex}
+\titlespacing*{\subsubsection}{0pt}{3ex}{3ex}
+\titlespacing*{\paragraph}{0pt}{3ex}{3ex}
+\titlespacing*{\subparagraph}{0pt}{3ex}{3ex}
+
 
 
 % Spacing
@@ -174,10 +199,10 @@
 \renewenvironment{abstract}{%
 	\begin{center}%
 		{\bfseries\thesisbigfont ABSTRACT}\\
-		 \vspace{1.5em}
+		 \vspace{1.5ex}
 		 
 		{\thesismediumfont\showthesistitle}\\
-		 \vspace{1.5em}
+		 \vspace{1.5ex}
 	\end{center}%
 	\quotation}{\newpage}
 \makeatother
@@ -187,16 +212,17 @@
 \newenvironment{ozet}{%
 	\begin{center}%
 		{\bfseries\thesisbigfont ÖZET}\\
-		\vspace{1.5em}
+		\vspace{1.5ex}
 		
 		{\thesismediumfont\showthesistitle}\\
-		\vspace{1.5em}
+		\vspace{1.5ex}
 	\end{center}%
 	\quotation}{\newpage}
 \makeatother
 
 
-% Dediaction, Acknowledgments, and Preface:
+
+% Dedication, Acknowledgments, and Preface:
 %-----------
 \makeatletter
 \newenvironment{dedication}{
@@ -206,7 +232,7 @@
 \newenvironment{acknowledgments}{\thispagestyle{empty}  % hides page number
 	\begin{center}%
 		{\bfseries\thesisbigfont ACKNOWLEDGMENTS}\\
-		\vspace{3em}
+		\vspace{3ex}
 	\end{center}%
 	\quotation
 }{\newpage}
@@ -214,12 +240,45 @@
 \newenvironment{preface}{\thispagestyle{empty}  % hides page number
 	\begin{center}%
 		{\bfseries\thesisbigfont PREFACE}\\
-		\vspace{3em}
+		\vspace{3ex}
 	\end{center}%
 	\quotation
 }{\newpage}
 \makeatother
 
-% Commands:
+
+
+
+% Table of Content and List of Figures and Tables:
 %-----------
+% https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/
+% https://tex.stackexchange.com/a/53901
+\usepackage[nottoc]{tocbibind} % make LoF and LoT show up in ToC
+\RequirePackage{tocloft}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\newlength\mylength
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{.}
+\settowidth\mylength{\cftchappresnum\cftchapaftersnum\quad}
+\addtolength\cftchapnumwidth{\mylength}
+
+%\usepackage{titletoc}%
+%\titlecontents{chapter}% <section-type>
+%[0pt]% <left>
+%{\bfseries}% <above-code>
+%{\chaptername\ \thecontentslabel:\quad}% <numbered-entry-format>
+%{}% <numberless-entry-format>
+%{\hfill\contentspage}% <filler-page-format>
 
