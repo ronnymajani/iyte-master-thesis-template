@@ -1,42 +1,42 @@
 % Deine Macro for signature page
 
-
-We approve the thesis of \textbf{\showthesisauthor}\\
-
-\textbf{Examining Committee Members:}\\
-
-
-\ifdefined\showthesiscommitteememberA
-	\showthesiscommitteememberA
-\fi
-
-\ifdefined\showthesiscommitteememberB
-\showthesiscommitteememberB
-\fi
-
-\ifdefined\showthesiscommitteememberC
-\showthesiscommitteememberC
-\fi
-
-\ifdefined\showthesiscommitteememberD
-\showthesiscommitteememberD
-\fi
-
-\ifdefined\showthesiscommitteememberE
-\showthesiscommitteememberE
-\fi
-
-\vspace{1.5em}
-\hfill
-\textbf{\showsignaturedate}
-\vspace{1.5em}
-
-\showthesissupervisor
-\showthesiscosupervisor
-
-\showthesisheadofdepartment
-\showthesisdeanofgraduateschool
-
+{\thispagestyle{empty}  % disable page numbering here
+	We approve the thesis of \textbf{\showthesisauthor}\\
+	
+	\textbf{Examining Committee Members:}\\
+	
+	
+	\ifdefined\showthesiscommitteememberA
+		\showthesiscommitteememberA
+	\fi
+	
+	\ifdefined\showthesiscommitteememberB
+	\showthesiscommitteememberB
+	\fi
+	
+	\ifdefined\showthesiscommitteememberC
+	\showthesiscommitteememberC
+	\fi
+	
+	\ifdefined\showthesiscommitteememberD
+	\showthesiscommitteememberD
+	\fi
+	
+	\ifdefined\showthesiscommitteememberE
+	\showthesiscommitteememberE
+	\fi
+	
+	\vspace{1.5em}
+	\hfill
+	\textbf{\showsignaturedate}
+	\vspace{1.5em}
+	
+	\showthesissupervisor
+	\showthesiscosupervisor
+	
+	\showthesisheadofdepartment
+	\showthesisdeanofgraduateschool
+}
 
 
 

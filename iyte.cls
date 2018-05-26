@@ -64,6 +64,7 @@
 %----------------------------
 % https://tex.stackexchange.com/a/153176
 \RequirePackage{fancyhdr}
+\RequirePackage{afterpage}
 % Turn on the style
 \pagestyle{fancy}
 % Clear the header and footer
@@ -79,7 +80,6 @@
 	\fancyfoot[R]{\thepage}%
 }
 \renewcommand{\headrulewidth}{0pt} % remove header horizontal bar
-
 
 
 
@@ -179,10 +179,46 @@
 		{\thesismediumfont\showthesistitle}\\
 		 \vspace{1.5em}
 	\end{center}%
-	\quotation}
+	\quotation}{\newpage}
 \makeatother
 
 
+\makeatletter
+\newenvironment{ozet}{%
+	\begin{center}%
+		{\bfseries\thesisbigfont ÖZET}\\
+		\vspace{1.5em}
+		
+		{\thesismediumfont\showthesistitle}\\
+		\vspace{1.5em}
+	\end{center}%
+	\quotation}{\newpage}
+\makeatother
+
+
+% Dediaction, Acknowledgments, and Preface:
+%-----------
+\makeatletter
+\newenvironment{dedication}{
+	\begin{center}
+}{\end{center}\newpage}
+
+\newenvironment{acknowledgments}{\thispagestyle{empty}  % hides page number
+	\begin{center}%
+		{\bfseries\thesisbigfont ACKNOWLEDGMENTS}\\
+		\vspace{3em}
+	\end{center}%
+	\quotation
+}{\newpage}
+
+\newenvironment{preface}{\thispagestyle{empty}  % hides page number
+	\begin{center}%
+		{\bfseries\thesisbigfont PREFACE}\\
+		\vspace{3em}
+	\end{center}%
+	\quotation
+}{\newpage}
+\makeatother
 
 % Commands:
 %-----------
