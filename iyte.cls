@@ -282,3 +282,13 @@
 %{}% <numberless-entry-format>
 %{\hfill\contentspage}% <filler-page-format>
 
+% Bibliography
+%-----------
+% Rename title of Bibliography
+\ifdefined\bibname
+	\renewcommand\bibname{REFERENCES}
+\fi
+\ifdefined\refname
+	\renewcommand{\refname}{REFERENCES}
+\fi
+
