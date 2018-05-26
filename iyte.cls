@@ -28,7 +28,7 @@
 
 % Font Family
 %----------------------------
-\RequirePackage[utf8]{inputenc}  %TODO: change to UTF-8?
+%\RequirePackage[utf8]{inputenc}  %TODO: change to UTF-8?
 %\RequirePackage{mathptmx}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{newtxmath,newtxtext}
@@ -90,6 +90,7 @@
 % https://tex.stackexchange.com/a/153176
 \RequirePackage{fancyhdr}
 \RequirePackage{afterpage}
+\RequirePackage{soul}
 % Turn on the style
 \pagestyle{fancy}
 % Clear the header and footer
@@ -257,10 +258,11 @@
 % https://tex.stackexchange.com/a/53901
 \usepackage[nottoc]{tocbibind} % make LoF and LoT show up in ToC
 \RequirePackage{tocloft}
+% Titles
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \renewcommand{\listtablename}{LIST OF TABLES}
 \renewcommand{\listfigurename}{LIST OF FIGURES}
-
+% Font Size, and Centering
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 \renewcommand{\cftlottitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
@@ -268,21 +270,41 @@
 \renewcommand{\cftloftitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
 \renewcommand{\cftafterloftitle}{\hspace*{\fill}}
 
-\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
-\newlength\mylength
-\renewcommand\cftchappresnum{\chaptername~}
-\renewcommand\cftchapaftersnum{.}
-\settowidth\mylength{\cftchappresnum\cftchapaftersnum\quad}
-\addtolength\cftchapnumwidth{\mylength}
+% Configure List of Tables and List of Figures: add 'Table'/'Figure' and 'Page'
+% https://tex.stackexchange.com/a/346301
+% List of Tables Format
+\makeatletter
+\newlength{\latexpnumwidth}
+\setlength{\latexpnumwidth}{\@pnumwidth}
+\renewcommand{\cfttabpresnum}{\tablename~}
+\addtolength{\cfttabnumwidth}{25pt}
+\let\origcftdot\cftdot
+\addtocontents{lot}{\protect\cftsetpnumwidth{25pt}}
+% list of Figures Format
+\addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
+\addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\tablename}~}}{\textbf{Page}}} % Write the header line
+\addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
+\addtocontents{lot}{\vskip\baselineskip\par}% Some vertical spacing 
+% List of Figures
+\renewcommand{\cftfigpresnum}{\figurename~}
+\addtolength{\cftfignumwidth}{25pt}
+\let\origcftdot\cftdot
+\addtocontents{lof}{\protect\cftsetpnumwidth{25pt}}
+\addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
+\addtocontents{lof}{\protect\contentsline{figure}{\numberline{\textbf{\figurename}~}}{\textbf{Page}}} % Write the header line
+\addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
+\addtocontents{lof}{\vskip\baselineskip\par}% Some vertical spacing 
+\makeatother
 
-%\usepackage{titletoc}%
-%\titlecontents{chapter}% <section-type>
-%[0pt]% <left>
-%{\bfseries}% <above-code>
-%{\chaptername\ \thecontentslabel:\quad}% <numbered-entry-format>
-%{}% <numberless-entry-format>
-%{\hfill\contentspage}% <filler-page-format>
+% Add 'Figure' in front of figure number in LoF
+%\renewcommand*\cftfigpresnum{Figure~}
+%\settowidth{\cftfignumwidth}{\cftfigpresnum}
+%\renewcommand{\cftfigaftersnumb}{\quad--~}
+% Add 'Table' in front of table number in LoT
+%\renewcommand*\cfttabpresnum{Table~}
+%\settowidth{\cfttabnumwidth}{\cftfigpresnum}
+%\renewcommand{\cfttabaftersnumb}{\quad--~}
+
 
 % Bibliography
 %-----------
