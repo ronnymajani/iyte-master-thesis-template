@@ -1,6 +1,24 @@
 % iyte.cls
 
-\def\fileversion{0.01}
+% If you need to use Turkish characters, these are the commands you'll need to insert them
+%\u{g} – ğ
+%\u{G} – Ğ
+%\c{c} – ç
+%\c{C} – Ç
+%\c{s} – ş
+%\c{S} – Ş
+%\"{u} – ü
+%\"{U} – Ü
+%\"{o} – ö
+%\"{O} – Ö
+%{\i} – ı
+%\.{I} – İ
+%\^{a}
+%\^{A}
+
+
+
+\def\fileversion{0.1}
 \def\filedate{2018/05/22}
 
 %  Take minutes of meetings
@@ -28,14 +46,24 @@
 
 % Font Family
 %----------------------------
-%\RequirePackage[utf8]{inputenc}  %TODO: change to UTF-8?
-%\RequirePackage{mathptmx}
+% Turkish and Graphicx problems:
+% https://tex.stackexchange.com/questions/32178/usepackageturkishbabel-and-includegraphics-inconcistency
+\RequirePackage[latin5]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{newtxmath,newtxtext}
-%\RequirePackage{times}
-
+%\RequirePackage{mathptmx}
 % for font compile problems:
 % https://tex.stackexchange.com/a/152749
+
+
+%\RequirePackage{graphicx}
+%\RequirePackage{etoolbox}
+%\let\oldincludegraphics\includegraphics
+%\renewcommand{\includegraphics}[2][]{%
+%	\oldincludegraphics[#1]{#2}%
+%	\shorthandon{=}%
+%}
+%\pretocmd{\includegraphics}{\shorthandoff{=}}{}{}
 
 
 % Sections
@@ -89,8 +117,6 @@
 %----------------------------
 % https://tex.stackexchange.com/a/153176
 \RequirePackage{fancyhdr}
-\RequirePackage{afterpage}
-\RequirePackage{soul}
 % Turn on the style
 \pagestyle{fancy}
 % Clear the header and footer
@@ -116,6 +142,11 @@
 	Please define your title with\\$\backslash$thesistitle\{My Title\}
 }
 \newcommand{\thesistitle}[1]{\renewcommand{\showthesistitle}{\uppercase{#1}}}
+% Turkish Thesis Title
+\newcommand{\showturkishthesistitle}{
+	Please define your title with\\$\backslash$turkishthesistitle\{My Title\}
+}
+\newcommand{\turkishthesistitle}[1]{\renewcommand{\showturkishthesistitle}{\uppercase{#1}}}
 % Thesis Author
 \newcommand{\showthesisauthor}{
 	Please define your title with\\$\backslash$thesisauthor\{Name SURNAME\}
@@ -153,7 +184,7 @@
 			#2
 		}
 	\end{minipage}
-	\vspace{1.5ex}
+	\vspace{.5ex}
 }
 % Signature Format
 \newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}{15cm}{8cm}}
@@ -214,10 +245,10 @@
 \makeatletter
 \newenvironment{ozet}{%
 	\begin{center}%
-		{\bfseries\thesisbigfont ÖZET}\\
+			{\bfseries\thesisbigfont \"{O}ZET}\\
 		\vspace{1.5ex}
 		
-		{\thesismediumfont\showthesistitle}\\
+		{\thesismediumfont\showturkishthesistitle}\\
 		\vspace{1.5ex}
 	\end{center}%
 	\quotation}{\newpage}
