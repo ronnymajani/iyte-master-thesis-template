@@ -114,7 +114,7 @@
 \newcommand{\showthesistitle}{
 	Please define your title with\\$\backslash$thesistitle\{My Title\}
 }
-\newcommand{\thesistitle}[1]{\renewcommand{\showthesistitle}{#1}}
+\newcommand{\thesistitle}[1]{\renewcommand{\showthesistitle}{\uppercase{#1}}}
 % Thesis Author
 \newcommand{\showthesisauthor}{
 	Please define your title with\\$\backslash$thesisauthor\{Name SURNAME\}
@@ -144,17 +144,19 @@
 % command to generate signature box's horizontal line
 \newcommand{\namesigdatehrule}[1]{\par\tikz \draw [black, ultra thick] (0,0) -- (#1,0);\par}
 % Commands to generate signature box
-\newcommand{\thesissignaturebox}[2]{
-	\begin{minipage}{7cm}%
-		\vspace{1.0cm}\namesigdatehrule{6cm}\smallskip
+\newcommand{\thesissignaturebox}[4]{
+	\begin{minipage}{#3}%
+		\vspace{1.0cm}\namesigdatehrule{#4}\smallskip
 		\noindent{
 			\textbf{#1}\\
 			#2
 		}
 	\end{minipage}
-	\vspace{0.5em}
+	\vspace{1.5ex}
 }
-\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}}
+% Signature Format
+\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}{15cm}{8cm}}
+\newcommand{\thesisremainingsignatures}[3]{\thesissignaturebox{#1}{#2 #3}{6.5cm}{6.5cm}}
 
 % definitions for committee members
 \newcommand{\thesiscommitteememberA}[3]{
@@ -172,22 +174,22 @@
 \newcommand{\thesiscommitteememberE}[3]{
 	\newcommand{\showthesiscommitteememberE}{\thesiscommitteemember{#1}{#2}{#3}}
 }
-% definitions for reamining signatures
+% definitions for remaining signatures
 % Supervisor
 \newcommand{\thesissupervisor}[3]{
-	\newcommand{\showthesissupervisor}{\thesiscommitteemember{#1}{Supervisor, #2}{#3}}
+	\newcommand{\showthesissupervisor}{\thesisremainingsignatures{#1}{Supervisor,}{#2, #3}}
 }
 % Co-Supervisor
 \newcommand{\thesiscosupervisor}[3]{
-	\newcommand{\showthesiscosupervisor}{\thesiscommitteemember{#1}{Co-Supervisor, #2}{#3}}
+	\newcommand{\showthesiscosupervisor}{\thesisremainingsignatures{#1}{Co-Supervisor,}{#2, #3}}
 }
 % Head of Department
 \newcommand{\thesisheadofdepartment}[2]{
-	\newcommand{\showthesisheadofdepartment}{\thesissignaturebox{#1}{Head of the Department of #2}}
+	\newcommand{\showthesisheadofdepartment}{\thesisremainingsignatures{#1}{Head of the Department of}{#2}}
 }
 % Dean of Graduate School
 \newcommand{\thesisdeanofgraduateschool}[1]{
-	\newcommand{\showthesisdeanofgraduateschool}{\thesissignaturebox{#1}{Dean of the Graduate School of Engineering and Sciences}}
+	\newcommand{\showthesisdeanofgraduateschool}{\thesisremainingsignatures{#1}{Dean of the}{Graduate School of Engineering and Sciences}}
 }
 \newcommand{\signaturedate}[3]{\newcommand{\showsignaturedate}{#1/#2/#3}}
 
