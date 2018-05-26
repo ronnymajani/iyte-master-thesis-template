@@ -96,7 +96,7 @@
 \renewcommand\chaptername{CHAPTER}
 
 % Section Spacing
-\titlespacing*{\section}{0pt}{3ex}{3ex}
+\titlespacing*{\chapter}{0pt}{0pt}{3ex}
 \titlespacing*{\section}{0pt}{3ex}{3ex}
 \titlespacing*{\subsection}{0pt}{3ex}{3ex}
 \titlespacing*{\subsubsection}{0pt}{3ex}{3ex}
