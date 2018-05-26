@@ -103,6 +103,11 @@
 	Please define your title with\\$\backslash$thesismajor\{Mathematics\}
 }
 \newcommand{\thesismajor}[1]{\renewcommand{\showthesismajor}{#1}}
+% Thesis Date
+\newcommand{\showthesisdate}{
+	Please define your title with\\$\backslash$thesisdate\{June\}\{2018\}
+}
+\newcommand{\thesisdate}[2]{\renewcommand{\showthesisdate}{#1 #2}}
 
 
 
