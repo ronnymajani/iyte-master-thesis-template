@@ -191,7 +191,7 @@
 \newcommand{\thesisdeanofgraduateschool}[1]{
 	\newcommand{\showthesisdeanofgraduateschool}{\thesisremainingsignatures{#1}{Dean of the}{Graduate School of Engineering and Sciences}}
 }
-\newcommand{\signaturedate}[3]{\newcommand{\showsignaturedate}{#1/#2/#3}}
+\newcommand{\signaturedate}[3]{\newcommand{\showsignaturedate}{#1 / #2 / #3}}
 
 
 
