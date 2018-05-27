@@ -11,11 +11,12 @@
 How to use this class:
 --------
 
-1. Download the files in this repository:
+1. Download the files and folders in this repository:
 
    - `iyte.cls`
-   - `pages/title.tex`
-   - `pages/signature.tex`
+   - pages/
+     - `title.tex`
+     - `signature.tex`
 
 2. Create a new file for your thesis
 
@@ -97,19 +98,19 @@ How to use this class:
 
 10. Now you should add your abstract:
 
-   ```latex
-   \begin{abstract}
-   	Fill in your abstract here
-   \end{abstract}
-   ```
+  ```latex
+  \begin{abstract}
+  	Fill in your abstract here
+  \end{abstract}
+  ```
 
-   And it's Turkish version
+  And it's Turkish version
 
-   ```latex
-   \begin{ozet}
-   	Burada bir \"{o}zet yaz
-   \end{ozet}
-   ```
+  ```latex
+  \begin{ozet}
+  	Burada bir \"{o}zet yaz
+  \end{ozet}
+  ```
 
 11. Finally before you start writing the main part of your thesis, you should generate the *Table of Contents*, *List of Figures*, and *List of Tables*:
 
