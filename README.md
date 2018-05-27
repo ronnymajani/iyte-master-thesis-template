@@ -155,8 +155,7 @@ How to use this class:
 
 
 
-
-##Packages Used by this class:
+## Packages Used by this class:
 
 - `geometry` used for specifying the dimensions, padding, and margins of the document
 - `inputenc` used for adding Turkish character support
