@@ -177,17 +177,17 @@ In order to use the special Turkish characters, you need to manually call the ap
 
 | Turkish | LaTeX Code |
 | :-----: | :--------: |
-|    ğ    |   \u{g}    |
-|    Ğ    |   \u{G}    |
-|    ç    |   \c{c}    |
-|    Ç    |   \c{C}    |
-|    ş    |   \c{s}    |
-|    Ş    |   \c{S}    |
-|    ü    |   \"{u}    |
-|    Ü    |   \"{U}    |
-|    ö    |   \"{o}    |
-|    Ö    |   \"{O}    |
-|    ı    |    {\i}    |
+|    ğ    |   \\u{g}   |
+|    Ğ    |   \\u{G}   |
+|    ç    |   \\c{c}   |
+|    Ç    |   \\c{C}   |
+|    ş    |   \\c{s}   |
+|    Ş    |   \\c{S}   |
+|    ü    |   \\"{u}   |
+|    Ü    |   \\"{U}   |
+|    ö    |   \\"{o}   |
+|    Ö    |   \\"{O}   |
+|    ı    |   {\\i}    |
 |    İ    |   \\.{I}   |
 
 
