@@ -1,5 +1,5 @@
 # iyte-master-thesis-template
-### A LaTeX Class for writing a Master Thesis for Izmir Institute of Technology
+### A LaTeX Class for writing a Master Thesis for Izmir Institute of Technology (2018)
 -----
 
 ###### Ronny Majani
@@ -146,6 +146,10 @@ How to use this class:
 - Main headings are set to use **16pt** font size
 - Subheadings are set to use **14pt** font size
 - The default font size is set to **12pt**
+- Paragraph indent is set to **1.27cm**
+- There is no spacing between consecutive paragraphs
+- **2x1.5** spacing is used before and after each heading/subheading
+- **2x1.5** spacing is used between the chapter number and it's title
 
 
 
@@ -193,3 +197,16 @@ In order to use the special Turkish characters, you need to manually call the ap
 
 - Font Compile problems: https://tex.stackexchange.com/a/152749
 - Turkish Character Problems: [see *Using Turkish in your Thesis*](#using-turkish-in-your-thesis:)
+
+
+
+### Sources that contributed to the making of the class file:
+
+- [Minutes in Less Than Hours: Using LATEX Resources](https://tug.org/pracjourn/2005-4/hefferon/hefferon.pdf)
+- [Making subparagraph work like a subsubsubsubsection](https://tex.stackexchange.com/a/392015)
+- [Changing font of sections](https://tex.stackexchange.com/questions/59726/change-size-of-section-subsection-subsubsection-paragraph-and-subparagraph-ti/59727)
+- [Formatting the page number to appear in the bottom right](https://tex.stackexchange.com/a/153176)
+- [Force our page number formatting to be used in title pages](https://tex.stackexchange.com/a/30230/828)
+- [Ways to customize Table of Contents](https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/)
+- [Add horizontal dots to table of contents entry](https://tex.stackexchange.com/a/53901)
+- [Adding the header to *List of Figures* and *List of Tables*](https://tex.stackexchange.com/a/346301)

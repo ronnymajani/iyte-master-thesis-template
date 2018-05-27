@@ -1,4 +1,5 @@
 % iyte.cls
+% RonnyM
 
 % If you need to use Turkish characters, these are the commands you'll need to insert them
 %\u{g} – ğ
@@ -17,12 +18,10 @@
 %\^{A}
 
 
-
+% reference: https://tug.org/pracjourn/2005-4/hefferon/hefferon.pdf
 \def\fileversion{0.1}
 \def\filedate{2018/05/22}
 
-%  Take minutes of meetings
-% 2005-Sept-01 Jim Hefferon jhefferon (at) smcvt.edu
 % --- Class structure: identification part
 % ---
 \ProvidesClass{iyte}[2018/05/22 version 0.01 IYTE Master Thesis]
@@ -79,6 +78,7 @@
 
 % Sections
 %----------------------------
+% https://tex.stackexchange.com/questions/59726/change-size-of-section-subsection-subsubsection-paragraph-and-subparagraph-ti/59727
 \newcommand{\thesisbigfont}{\fontsize{16pt}{24pt}\selectfont\bfseries}
 \newcommand{\thesismediumfont}{\fontsize{14pt}{21pt}\selectfont}
 \RequirePackage{titlesec}
