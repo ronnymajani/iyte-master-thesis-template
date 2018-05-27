@@ -201,15 +201,18 @@
 	\begin{minipage}{#3}%
 		\vspace{1.0cm}\namesigdatehrule{#4}\smallskip
 		\noindent{
-			\textbf{#1}\\
+			\textbf{#1}
+		}
+	
+		\noindent {
 			#2
 		}
 	\end{minipage}
 	\vspace{.5ex}
 }
 % Signature Format
-\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}{15cm}{8cm}}
-\newcommand{\thesisremainingsignatures}[3]{\thesissignaturebox{#1}{#2 #3}{6.5cm}{6.5cm}}
+\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}{15cm}{5.1cm}}
+\newcommand{\thesisremainingsignatures}[3]{\thesissignaturebox{#1}{#2 #3}{6.25cm}{5.1cm}}
 
 % definitions for committee members
 \newcommand{\thesiscommitteememberA}[3]{
