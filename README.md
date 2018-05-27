@@ -35,7 +35,7 @@ How to use this class:
    \thesisauthor{fill with your name and surname}
    \thesisdegree{fill with name of your degree eg: MASTER of Engineering}
    \thesismajor{fill with the name of your major eg: Computer Engineering}
-   \thesisdate{Day}{Month}{Year}
+   \thesisdate{Month}{Year}
    ```
 
 6. After defining the previous commands, you should now include the Title page:
@@ -48,7 +48,7 @@ How to use this class:
 7. Next you need to define commands that will be used by the signature page:
 
    ```latex
-   \signaturedate{10}{June}{2018}
+   \signaturedate{Day}{Month}{Year}
    \thesiscommitteememberA{Committee Member 1's Title and Name}{Department}{Institute}
    \thesiscommitteememberB{Committee Member 2's Title and Name}{Department}{Institute}
    \thesiscommitteememberC{Committee Member 3's Title and Name}{Department}{Institute}
@@ -187,3 +187,9 @@ In order to use the special Turkish characters, you need to manually call the ap
 |    ı    |    {\i}    |
 |    İ    |   \\.{I}   |
 
+
+
+## Possible Problems and How to Fix Them:
+
+- Font Compile problems: https://tex.stackexchange.com/a/152749
+- Turkish Character Problems: [see *Using Turkish in your Thesis*](#using-turkish-in-your-thesis:)
