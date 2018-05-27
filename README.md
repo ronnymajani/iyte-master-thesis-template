@@ -138,6 +138,81 @@ How to use this class:
 
 
 
+#####  Your document should now look something like this:
+
+```latex
+\documentclass{iyte}
+
+\begin{document}
+% Enable roman numeral page numbering (i, ii, iii, iv, v, vi, ...)
+\pagenumbering{roman}
+
+% Title Page Definitions
+\thesistitle{fill with your thesis's title}
+\turkishthesistitle{fill with the Turkish version of your thesis's title}
+\thesisauthor{fill with your name and surname}
+\thesisdegree{fill with name of your degree eg: MASTER of Engineering}
+\thesismajor{fill with the name of your major eg: Computer Engineering}
+\thesisdate{Month}{Year}
+% insert Title Page
+\input{pages/title.tex}
+\newpage
+
+% Signature Page Definitions
+\signaturedate{Day}{Month}{Year}
+\thesiscommitteememberA{Committee Member 1's Title and Name}{Department}{Institute}
+\thesiscommitteememberB{Committee Member 2's Title and Name}{Department}{Institute}
+\thesiscommitteememberC{Committee Member 3's Title and Name}{Department}{Institute}
+\thesiscommitteememberD{Committee Member 4's Title and Name}{Department}{Institute}
+\thesiscommitteememberE{Committee Member 5's Title and Name}{Department}{Institute}
+\thesissupervisor{Thesis Supervisor's Title and Name}{Department}{Institute}
+\thesiscosupervisor{Thesis Co-Supervisor's Title and Name}{Department}{Institute}
+\thesisheadofdepartment{Head of Department's Title and Name}{Department}
+\thesisdeanofgraduateschool{Dean of Graduate School's Title and Name}
+% insert Signature Page
+\input{pages/signature.tex}
+\newpage
+
+% insert Dedication Page (optional):
+\begin{dedication}
+	Insert dedication here
+\end{dedication}
+% insert Acknowledgments Page (optional):
+\begin{acknowledgments}
+	Insert Acknowledgments here
+\end{acknowledgments}
+% insert Preface Page (optional):
+\begin{preface}
+	Insert Preface here
+\end{preface}
+
+% insert Abstract Page:
+\begin{abstract}
+	Fill in your abstract here
+\end{abstract}
+% insert Turkish Abstract Page
+\begin{ozet}
+	Burada bir \"{o}zet yaz
+\end{ozet}
+
+% insert Table of Contents
+\tableofcontents
+\newpage
+% insert List of Figures
+\listoffigures
+\newpage
+% insert List of Tables
+\listoftables
+\newpage
+
+% Main Content of your Thesis
+\chapter{INTRODUCTION} % first chapter
+% Enable Arabic numeral page numbering (1, 2, 3, 4, 5, 6, ...)
+\pagenumbering{arabic}
+```
+
+
+
 
 
 ## Overview of this Class:
