@@ -11,16 +11,22 @@
 How to use this class:
 --------
 
-1. Download the files and folders in this repository:
+1. Download the files and folders in this repository, and put them in a folder of your choice:
 
    - `iyte.cls`
    - pages/
      - `title.tex`
      - `signature.tex`
 
-2. Create a new file for your thesis
+2. In the same folder, create a new file for your thesis. Your folder should now have the following layout:
 
-3. In the beginning of this file add the following line:
+   - `iyte.cls`
+   - `mythesis.tex` *or any other name. this is your main tex file.*
+   - pages/
+     - `title.tex`
+     - `signature.tex`
+
+3. In the beginning of your file add the following line:
 
    `\documentclass{iyte}`
 
