@@ -248,6 +248,7 @@ How to use this class:
 - `tikz` used for drawing horizontal lines (such as in the signature page)
 - `tocbibind` used so the *Table of Contents* also lists the *List of Figures* and *List of Tables*
 - `tocloft` used to modify the format of the *Table of Contents*, *List of Figures*, and *List of Tables*
+- `textpos` used to force the absolute positioning of the elements in the Title Page
 
 
 
@@ -291,3 +292,4 @@ In order to use the special Turkish characters, you need to manually call the ap
 - [Ways to customize Table of Contents](https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/)
 - [Add horizontal dots to table of contents entry](https://tex.stackexchange.com/a/53901)
 - [Adding the header to *List of Figures* and *List of Tables*](https://tex.stackexchange.com/a/346301)
+- [Using `textbox` to position text in page with absolute coordinates](https://tex.stackexchange.com/a/286821)

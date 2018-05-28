@@ -21,38 +21,57 @@
 %SOFTWARE.
 
 
+
 \begin{titlepage}
-	\newcommand*{\titlefont}[1]{\textbf{\fontsize{18pt}{27pt}\selectfont #1}}
-	\newcommand*{\subtitlefont}[1]{\textbf{\setstretch{0.77}\fontsize{14pt}{21pt}\selectfont#1}}
+	% Commands for positioning 'textbox' elements in the page
+	\newcommand{\fromtop}[1]{%
+		\dimexpr+2.5cm+#1\relax
+	}
+	\newcommand{\fromleft}[1]{%
+		\dimexpr+3.5cm+#1\relax
+	}
+	\newcommand{\textboxwidth}{\textwidth}
+	\newcommand{\fromleftoffset}{\fromleft{0cm}}
+	\setlength{\TPHorizModule}{\textwidth}
+	\setlength{\TPVertModule}{\textwidth}
+	% Commands for setting the fonts of this page
+	\newcommand*{\titlefont}[1]{\textbf{\onehalfspacing\fontsize{18pt}{27pt}\selectfont #1}}
+	\newcommand*{\subtitlefont}[1]{\textbf{\setstretch{0.75}\fontsize{14pt}{21pt}\selectfont#1}}
+	% Title Page main content
 	\begin{center}
-		\vspace*{4.5em}  % 3 x single spacing
+		% Thesis Title
+		\vspace*{3\baselineskip}  % 3 x single spacing
 		\titlefont{
 			\showthesistitle
 		}
+		% Middle Block
+		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{13\baselineskip})
+			\subtitlefont{
+				A Thesis Submitted to\\
+				the Graduate School of Engineering and Sciences of\\
+				\.{I}zmir Institute of Technology\\
+				in Partial Fulfillment of the Requirements for the Degree of\linebreak\\
+				\showthesisdegree\linebreak\\
+				in \showthesismajor
+			}
+		\end{textblock*}
 		
-		\vspace{15em}
-
-		\subtitlefont{
-		A Thesis Submitted to\\
-		the Graduate School of Engineering and Sciences of\\
-		\.{I}zmir Institute of Technology\\
-		in Partial Fulfillment of the Requirements for the Degree of\linebreak\\
-		\showthesisdegree\linebreak\\
-		in \showthesismajor
-		}
-		
-		\vspace{6em}
-		\subtitlefont{
-		by\\
-		\showthesisauthor
-		}
-		
-		\vspace{10.5em}
-		
-		\subtitlefont{
-			\showthesisdate\\
-			\.{I}ZM\.{I}R
-		}
+		% Author
+		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{23.5\baselineskip})
+			\subtitlefont{
+				by\\
+				\showthesisauthor
+			}
+		\end{textblock*}
+	
+		% Date
+		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{31.5\baselineskip})
+			\subtitlefont{
+				\showthesisdate\\
+				\.{I}ZM\.{I}R
+			}
+		\end{textblock*}
+	
 	\end{center}
 \end{titlepage}
-\addtocounter{page}{1}
+\addtocounter{page}{1}  % add 1 to the page counter (so Title page counts as page i)

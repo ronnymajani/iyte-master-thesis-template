@@ -190,6 +190,11 @@
 \newcommand{\thesisdate}[2]{\renewcommand{\showthesisdate}{#1 #2}}
 
 
+% Title Page
+%------------------
+% https://tex.stackexchange.com/a/286821
+\RequirePackage[absolute]{textpos}
+
 
 % Signature Page
 %------------------
