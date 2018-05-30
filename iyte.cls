@@ -155,6 +155,19 @@
 \renewcommand{\headrulewidth}{0pt} % remove header horizontal bar
 
 
+% Footnotes
+%------------------
+% set footnote margin 1cm from the left
+\RequirePackage{footmisc}
+\renewcommand{\footnotemargin}{1cm}
+% set footnote line separator to 5cm width
+% https://tex.stackexchange.com/a/21917
+\renewcommand{\footnoterule}{%
+	\kern -3pt
+	\hrule width 5cm height 1pt
+	\kern 2pt
+}
+
 
 % Definitions
 %------------------

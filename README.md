@@ -232,6 +232,7 @@ How to use this class:
 - There is no spacing between consecutive paragraphs
 - **2x1.5** spacing is used before and after each heading/subheading
 - **2x1.5** spacing is used between the chapter number and it's title
+- footnotes' font size is **10pt**, their left margin is **1cm**, and their line separator is **5cm** wide
 
 
 
@@ -249,6 +250,7 @@ How to use this class:
 - `tocbibind` used so the *Table of Contents* also lists the *List of Figures* and *List of Tables*
 - `tocloft` used to modify the format of the *Table of Contents*, *List of Figures*, and *List of Tables*
 - `textpos` used to force the absolute positioning of the elements in the Title Page
+- `footmisc` used to set the footnotes left margin
 
 
 
@@ -293,3 +295,4 @@ In order to use the special Turkish characters, you need to manually call the ap
 - [Add horizontal dots to table of contents entry](https://tex.stackexchange.com/a/53901)
 - [Adding the header to *List of Figures* and *List of Tables*](https://tex.stackexchange.com/a/346301)
 - [Using `textbox` to position text in page with absolute coordinates](https://tex.stackexchange.com/a/286821)
+- [Setting the line width of the footnote separator](https://tex.stackexchange.com/a/21917)
