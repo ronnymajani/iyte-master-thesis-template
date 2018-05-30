@@ -113,16 +113,16 @@
 
 % Format Chapters
 \titleformat{\chapter}[display]
-{\thesisbigfont\bfseries\centering}{\chaptertitlename\  \thechapter}{3ex}{}
+{\thesisbigfont\bfseries\centering}{\chaptertitlename\  \thechapter}{\baselineskip}{}
 \renewcommand\chaptername{CHAPTER}
 
 % Section Spacing
-\titlespacing*{\chapter}{0pt}{0pt}{3ex}
-\titlespacing*{\section}{0pt}{3ex}{3ex}
-\titlespacing*{\subsection}{0pt}{3ex}{3ex}
-\titlespacing*{\subsubsection}{0pt}{3ex}{3ex}
-\titlespacing*{\paragraph}{0pt}{3ex}{3ex}
-\titlespacing*{\subparagraph}{0pt}{3ex}{3ex}
+\titlespacing*{\chapter}{0pt}{0pt}{2\baselineskip}
+\titlespacing*{\section}{0pt}{2\baselineskip}{2\baselineskip}
+\titlespacing*{\subsection}{0pt}{2\baselineskip}{2\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{2\baselineskip}{2\baselineskip}
+\titlespacing*{\paragraph}{0pt}{2\baselineskip}{2\baselineskip}
+\titlespacing*{\subparagraph}{0pt}{2\baselineskip}{2\baselineskip}
 
 
 
@@ -167,6 +167,13 @@
 	\hrule width 5cm height 1pt
 	\kern 2pt
 }
+
+
+% Spacing of Floats
+%------------------
+% http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/squeeze.html
+% set the spacing above and below figures in the text as 2x1.5 spacing
+\renewcommand{\intextsep}{2\baselineskip}
 
 
 % Definitions
@@ -275,10 +282,10 @@
 \renewenvironment{abstract}{%
 	\begin{center}%
 		{\bfseries\thesisbigfont ABSTRACT}\\
-		 \vspace{1.5ex}
+		 \vspace{\baselineskip}
 		 
 		{\thesismediumfont\showthesistitle}\\
-		 \vspace{1.5ex}
+		 \vspace{\baselineskip}
 	\end{center}%
 	\quotation}{\newpage}
 \makeatother
@@ -288,10 +295,10 @@
 \newenvironment{ozet}{%
 	\begin{center}%
 			{\bfseries\thesisbigfont \"{O}ZET}\\
-		\vspace{1.5ex}
+		\vspace{\baselineskip}
 		
 		{\thesismediumfont\showturkishthesistitle}\\
-		\vspace{1.5ex}
+		\vspace{\baselineskip}
 	\end{center}%
 	\quotation}{\newpage}
 \makeatother
@@ -308,7 +315,7 @@
 \newenvironment{acknowledgments}{\thispagestyle{empty}  % hides page number
 	\begin{center}%
 		{\bfseries\thesisbigfont ACKNOWLEDGMENTS}\\
-		\vspace{3ex}
+		\vspace{2\baselineskip}
 	\end{center}%
 	\quotation
 }{\newpage}
@@ -316,7 +323,7 @@
 \newenvironment{preface}{\thispagestyle{empty}  % hides page number
 	\begin{center}%
 		{\bfseries\thesisbigfont PREFACE}\\
-		\vspace{3ex}
+		\vspace{2\baselineskip}
 	\end{center}%
 	\quotation
 }{\newpage}

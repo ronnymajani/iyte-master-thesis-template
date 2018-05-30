@@ -296,3 +296,4 @@ In order to use the special Turkish characters, you need to manually call the ap
 - [Adding the header to *List of Figures* and *List of Tables*](https://tex.stackexchange.com/a/346301)
 - [Using `textbox` to position text in page with absolute coordinates](https://tex.stackexchange.com/a/286821)
 - [Setting the line width of the footnote separator](https://tex.stackexchange.com/a/21917)
+- [Adjusting spacing of float environments in LaTeX](http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/squeeze.html)
