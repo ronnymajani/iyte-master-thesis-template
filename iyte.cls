@@ -280,26 +280,27 @@
 %-----------
 \makeatletter
 \renewenvironment{abstract}{%
-	\begin{center}%
-		{\bfseries\thesisbigfont ABSTRACT}\\
-		 \vspace{\baselineskip}
-		 
-		{\thesismediumfont\showthesistitle}\\
-		 \vspace{\baselineskip}
-	\end{center}%
+	\centering
+	
+	{\bfseries\thesisbigfont ABSTRACT}\\
+ 	\vspace{\baselineskip}
+	
+	{\thesismediumfont\showthesistitle}\\
+ 	\vspace{\baselineskip}
+ 	
 	\quotation}{\newpage}
 \makeatother
 
 
 \makeatletter
 \newenvironment{ozet}{%
-	\begin{center}%
-			{\bfseries\thesisbigfont \"{O}ZET}\\
-		\vspace{\baselineskip}
+	\centering
+	{\bfseries\thesisbigfont \"{O}ZET}\\
+	\vspace{\baselineskip}
 		
-		{\thesismediumfont\showturkishthesistitle}\\
-		\vspace{\baselineskip}
-	\end{center}%
+	{\thesismediumfont\showturkishthesistitle}\\
+	\vspace{\baselineskip}
+	
 	\quotation}{\newpage}
 \makeatother
 
@@ -313,18 +314,16 @@
 }{\end{center}\newpage}
 
 \newenvironment{acknowledgments}{\thispagestyle{empty}  % hides page number
-	\begin{center}%
-		{\bfseries\thesisbigfont ACKNOWLEDGMENTS}\\
-		\vspace{2\baselineskip}
-	\end{center}%
+	\centering
+	{\bfseries\thesisbigfont ACKNOWLEDGMENTS}\\
+	\vspace{2\baselineskip}
 	\quotation
 }{\newpage}
 
 \newenvironment{preface}{\thispagestyle{empty}  % hides page number
-	\begin{center}%
-		{\bfseries\thesisbigfont PREFACE}\\
-		\vspace{2\baselineskip}
-	\end{center}%
+	\centering
+	{\bfseries\thesisbigfont PREFACE}\\
+	\vspace{2\baselineskip}
 	\quotation
 }{\newpage}
 \makeatother
