@@ -281,6 +281,7 @@ You can directly write Turkish characters in your document, so long as you save 
 
 - Font Compile problems: https://tex.stackexchange.com/a/152749
 - Turkish Character Problems: [see *Using Turkish in your Thesis*](#using-turkish-in-your-thesis:)
+- [`Package inputenc Error: Unicode char ... not found`](https://tex.stackexchange.com/a/135734)
 
 
 
