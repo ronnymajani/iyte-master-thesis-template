@@ -256,9 +256,9 @@ How to use this class:
 
 ## Using Turkish in your Thesis:
 
-Turkish support is added to this class using the `inputenc` package set to use `latin5` encoding.
+Turkish support is added to this class using the `inputenc` package set to use `utf8` encoding.
 
-In order to use the special Turkish characters, you need to manually call the appropriate command corresponding to the character you want. Directly typing a Turkish character will **not** work, and will probably cause the compiler to fail. Use the following table to write Turkish characters:
+You can directly write Turkish characters in your document, so long as you save the document in UTF-8 encoding. Alternatively, you can manually call the appropriate encoding commands corresponding to the Turkish characters you want to write, by using the following table:
 
 | Turkish | LaTeX Code |
 | :-----: | :--------: |

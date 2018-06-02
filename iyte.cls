@@ -68,7 +68,7 @@
 %----------------------------
 % Turkish and Graphicx problems:
 % https://tex.stackexchange.com/questions/32178/usepackageturkishbabel-and-includegraphics-inconcistency
-\RequirePackage[latin5]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{newtxmath,newtxtext}
 %\RequirePackage{mathptmx}
@@ -295,7 +295,7 @@
 \makeatletter
 \newenvironment{ozet}{%
 	\centering
-	{\bfseries\thesisbigfont \"{O}ZET}\\
+	{\bfseries\thesisbigfont ÖZET}\\
 	\vspace{\baselineskip}
 		
 	{\thesismediumfont\showturkishthesistitle}\\
