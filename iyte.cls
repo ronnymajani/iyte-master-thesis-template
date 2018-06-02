@@ -187,7 +187,7 @@
 \newcommand{\showturkishthesistitle}{
 	Please define your title with\\$\backslash$turkishthesistitle\{My Title\}
 }
-\newcommand{\turkishthesistitle}[1]{\renewcommand{\showturkishthesistitle}{\uppercase{#1}}}
+\newcommand{\turkishthesistitle}[1]{\renewcommand{\showturkishthesistitle}{#1}}
 % Thesis Author
 \newcommand{\showthesisauthor}{
 	Please define your title with\\$\backslash$thesisauthor\{Name SURNAME\}
@@ -295,7 +295,7 @@
 \makeatletter
 \newenvironment{ozet}{%
 	\centering
-	{\bfseries\thesisbigfont ÖZET}\\
+	{\bfseries\thesisbigfont \"{O}ZET}\\
 	\vspace{\baselineskip}
 		
 	{\thesismediumfont\showturkishthesistitle}\\
