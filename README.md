@@ -221,7 +221,7 @@ How to use this class:
 - The dimensions are set to **A4 Paper** 
 - The left margin is set to **3.5cm**
 - The top, right, and bottom margins are set to **2.5cm**
-- `latin5` encoding is used
+- `utf8` encoding is used
 - Line spacing is set to **1.5** *(one half spacing)*
 - Font is set to **Times New Roman**
 - The thesis title uses **18pt** font size
