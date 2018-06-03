@@ -297,6 +297,25 @@ Although If you wish to use the Chicago citation style we recommend you do the f
    ```
 
 
+
+## Hyperref
+
+If you wish to use the `hyperref` package in your document to enable links and URLs in the pdf, just add the following commands:
+
+```latex
+\usepackage[unicode]{hyperref}
+\hypersetup{
+	colorlinks   = true,    % Colours the links' text instead of drawing ugly boxes around them
+	urlcolor     = blue,    % Colour for external hyperlinks set to blue
+	linkcolor    = black,   % Colour of internal links text set to black
+	citecolor    = black      % Colour of citations text set to black
+}
+```
+
+
+
+
+
 ## Possible Problems and How to Fix Them:
 
 - Font Compile problems: https://tex.stackexchange.com/a/152749
