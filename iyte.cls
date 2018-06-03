@@ -76,14 +76,17 @@
 % https://tex.stackexchange.com/a/152749
 
 
-%\RequirePackage{graphicx}
-%\RequirePackage{etoolbox}
-%\let\oldincludegraphics\includegraphics
-%\renewcommand{\includegraphics}[2][]{%
-%	\oldincludegraphics[#1]{#2}%
-%	\shorthandon{=}%
+
+% Hyperref
+%----------------------------
+%\RequirePackage[unicode]{hyperref}
+%\hypersetup{
+%	colorlinks   = true,    % Colours links instead of ugly boxes
+%	urlcolor     = blue,    % Colour for external hyperlinks
+%	linkcolor    = black,   % Colour of internal links; disabled for table of contents
+%	citecolor    = black      % Colour of citations
 %}
-%\pretocmd{\includegraphics}{\shorthandoff{=}}{}{}
+
 
 
 % Sections
@@ -361,7 +364,7 @@
 \addtocontents{lot}{\protect\cftsetpnumwidth{25pt}}
 % list of Figures Format
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
-\addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\tablename}~}}{\textbf{Page}}} % Write the header line
+\addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\tablename}~}}{\textbf{Page}}{}{}} % Write the header line
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
 \addtocontents{lot}{\vskip\baselineskip\par}% Some vertical spacing 
 % List of Figures
@@ -370,10 +373,15 @@
 \let\origcftdot\cftdot
 \addtocontents{lof}{\protect\cftsetpnumwidth{25pt}}
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
-\addtocontents{lof}{\protect\contentsline{figure}{\numberline{\textbf{\figurename}~}}{\textbf{Page}}} % Write the header line
+\phantomsection\addtocontents{lof}{\protect\contentsline{figure}{\numberline{\textbf{\figurename}~}}{\textbf{Page}}{}{}} % Write the header line
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
 \addtocontents{lof}{\vskip\baselineskip\par}% Some vertical spacing 
 \makeatother
+
+% fix for hyperref:
+% With hyperref, \contentsline needs five arguments, not three. So adding {}{} after {#3} will do.
+% https://tex.stackexchange.com/questions/168013/redefining-contentsline-with-hyperref-loaded
+% I fixed it, so now you can freely add hyperref
 
 % Add 'Figure' in front of figure number in LoF
 %\renewcommand*\cftfigpresnum{Figure~}
