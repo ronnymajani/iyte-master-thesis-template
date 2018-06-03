@@ -21,6 +21,8 @@
 %SOFTWARE.
 
 \documentclass{iyte}    %% main class file
+%\usepackage[authordate,strict,backend=bibtex,bibencoding=inputenc]{biblatex-chicago}
+%\addbibresource{references.bib}
 
 \begin{document}
 \pagenumbering{roman}
@@ -90,11 +92,12 @@ life
 aaaa
 \paragraph{mini life}
 bb
-\cite{Cho2014}
-\cite{10.1371/journal.pone.0176792}
+%\cite{Sutskever2013}
+%\cite{Dozat2016}
+
 \subparagraph{tiny life}
 
-\bibliographystyle{acm}
-\bibliography{references}
+%\nocite{*}
+%\printbibliography[title=References]
 
 \end{document}
