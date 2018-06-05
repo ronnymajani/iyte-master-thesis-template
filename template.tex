@@ -22,6 +22,7 @@
 
 \documentclass{iyte}    %% main class file
 
+
 % Using Hyperref
 % --------------
 %\usepackage[unicode]{hyperref}
@@ -33,8 +34,19 @@
 %}
 
 
+% Uncomment if you want to use the ACM Style References
+% --------------
+%\usepackage{url}
+%\usepackage{natbib}
+
+
+
+
 \begin{document}
 \pagenumbering{roman}
+
+% --------------
+
 % Title Page Definitions
 \thesistitle{AUTOMATIC, FAST AND ACCURATE SEQUENCE DECONTAMINATION}
 \turkishthesistitle{OTOMAT\.{I}K, HIZLI VE DO\u{g}RU D\.{I}Z\.{I} DEKONTAM\.{I}NASYONU}
@@ -42,10 +54,12 @@
 \thesisdegree{MASTER OF Engineering}
 \thesismajor{Computer Engineering}
 \thesisdate{June}{2018}
+
 % Add Title Page
 \input{pages/title.tex}
 \newpage
 
+% --------------
 
 % Signature Page Definitions
 \signaturedate{10}{June}{2018}
@@ -107,5 +121,10 @@ bb
 
 \subparagraph{tiny life}
 
+
+% Uncomment to enable ACM style References:
+% --------------
+%\bibliographystyle{ACM-Reference-Format}
+%\bibliography{references}
 
 \end{document}

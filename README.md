@@ -299,6 +299,28 @@ If you wish to use the `hyperref` package in your document to enable links and U
 
 
 
+## References
+
+You can use any reference style you like, but we advise you use the ACM reference style. We provide the bibtex style file in this repository. To use this style, you must add the `url` and `natbib` package in the preamble of our document using:
+
+```latex
+\usepackage{url}
+\usepackage{natbib}
+```
+
+And when you want to add the references section at the end of your document (but before the appendices) add the following lines:
+
+```latex
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{name-of-your-references-file}
+```
+
+
+
+
+
+
+
 ## Possible Problems and How to Fix Them:
 
 - Font Compile problems: https://tex.stackexchange.com/a/152749
