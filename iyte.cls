@@ -131,6 +131,7 @@
 
 % Spacing
 %----------------------------
+\RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \onehalfspacing
 \setlength{\parindent}{1.27cm}

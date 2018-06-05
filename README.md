@@ -250,6 +250,7 @@ How to use this class:
 - `inputenc` used for adding Turkish character support
 - `fontenc`, `newtxmath`, `newtxtext` used for providing *Times New Roman* font
 - `titlesec` used for modifying section headings' font
+- `indentfirst` used to force indentation of first paragraphs too
 - `setspace` used for setting the line spacing of the document
 - `fancyhdr` used for formatting the page numbering of the document
 - `tikz` used for drawing horizontal lines (such as in the signature page)
