@@ -67,7 +67,7 @@ How to use this class:
    \thesisdeanofgraduateschool{Dean of Graduate School's Title and Name}
    ```
 
-   You can add up to 5 committee members in total. If you don't need all of them, you can simply comment out the one's you don't need.
+   - You can add up to 5 committee members in total. If you don't need all of them, you can simply **comment out** the one's you don't need.
 
 8. Now you can include the signature page:
 

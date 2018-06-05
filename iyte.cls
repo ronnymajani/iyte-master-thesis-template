@@ -235,7 +235,7 @@
 	\vspace{.5ex}
 }
 % Signature Format
-\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{#2, #3}{15cm}{5.1cm}}
+\newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{Department of #2, #3}{15cm}{5.1cm}}
 \newcommand{\thesisremainingsignatures}[3]{\thesissignaturebox{#1}{#2 #3}{6.25cm}{5.1cm}}
 
 % definitions for committee members
@@ -257,11 +257,11 @@
 % definitions for remaining signatures
 % Supervisor
 \newcommand{\thesissupervisor}[3]{
-	\newcommand{\showthesissupervisor}{\thesisremainingsignatures{#1}{Supervisor,}{#2\\ #3}}
+	\newcommand{\showthesissupervisor}{\thesisremainingsignatures{#1}{Supervisor, Department of}{#2\\ #3}}
 }
 % Co-Supervisor
 \newcommand{\thesiscosupervisor}[3]{
-	\newcommand{\showthesiscosupervisor}{\thesisremainingsignatures{#1}{Co-Supervisor,}{#2\\#3}}
+	\newcommand{\showthesiscosupervisor}{\thesisremainingsignatures{#1}{Co-Supervisor, Department of}{#2\\#3}}
 }
 % Head of Department
 \newcommand{\thesisheadofdepartment}[2]{
