@@ -69,6 +69,12 @@ How to use this class:
 
    - You can add up to 5 committee members in total. If you don't need all of them, you can simply **comment out** the one's you don't need.
 
+   - Optionally you can manually set the vertical spacing of the signature page by using the following command:
+
+     ```latex
+     \setsignaturepagespacing{0.8cm}  % replace the argument with the desired value
+     ```
+
 8. Now you can include the signature page:
 
    ```latex

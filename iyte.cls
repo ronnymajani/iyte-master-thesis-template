@@ -222,12 +222,17 @@
 % Signature Page
 %------------------
 \RequirePackage{tikz}
+% command to change the vertical spacing of signature boxes
+\newcommand{\signaturepagespacing}{0.8cm}
+\newcommand{\setsignaturepagespacing}[1]{
+	\renewcommand{\signaturepagespacing}{#1}
+}
 % command to generate signature box's horizontal line
 \newcommand{\namesigdatehrule}[1]{\par\tikz \hspace{-2pt} \draw [black, ultra thick] (0,0) -- (#1,0);\par}
 % Commands to generate signature box
 \newcommand{\thesissignaturebox}[4]{
 	\begin{minipage}{#3}%
-		\vspace{1.0cm}\namesigdatehrule{#4}\smallskip
+		\vspace{\signaturepagespacing}\namesigdatehrule{#4}\smallskip
 			\textbf{#1}
 	
 			#2
@@ -237,6 +242,7 @@
 % Signature Format
 \newcommand{\thesiscommitteemember}[3]{\thesissignaturebox{#1}{Department of #2, #3}{15cm}{5.1cm}}
 \newcommand{\thesisremainingsignatures}[3]{\thesissignaturebox{#1}{#2 #3}{6.25cm}{5.1cm}}
+
 
 % definitions for committee members
 \newcommand{\thesiscommitteememberA}[3]{
