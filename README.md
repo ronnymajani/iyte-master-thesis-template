@@ -343,6 +343,20 @@ For each appendix simple call the `\chapter{title}` command.
 
 
 
+## Abbreviation, Acronyms, and Nomenclature
+
+If you wish to use abbreviations, acronyms, or nomenclature in your tex file, we suggest you use the `acro` package. Simply add `\usepackage{acro}` in the preamble of your document. With this you can easily define new acronyms and then with one command print them all out. This package provides a `\printacronyms` command that prints all the abbreviations you've defined. We only suggest that when you use such a command, to specify via the command's optional arguments, to use the `\chapter*` heading command. In the case of the `\printacronyms` command you would do this as follows:
+
+```latex
+\printacronyms[name=ABBREVIATIONS,heading=chapter*]
+```
+
+You can change the title name to whatever you see fit, but we suggest writing it in all caps.
+
+
+
+
+
 ## Possible Problems and How to Fix Them:
 
 - Font Compile problems: https://tex.stackexchange.com/a/152749
