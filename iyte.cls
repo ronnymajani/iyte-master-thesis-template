@@ -223,18 +223,14 @@
 %------------------
 \RequirePackage{tikz}
 % command to generate signature box's horizontal line
-\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [black, ultra thick] (0,0) -- (#1,0);\par}
+\newcommand{\namesigdatehrule}[1]{\par\tikz \hspace{-2pt} \draw [black, ultra thick] (0,0) -- (#1,0);\par}
 % Commands to generate signature box
 \newcommand{\thesissignaturebox}[4]{
 	\begin{minipage}{#3}%
 		\vspace{1.0cm}\namesigdatehrule{#4}\smallskip
-		\noindent{
 			\textbf{#1}
-		}
 	
-		\noindent {
 			#2
-		}
 	\end{minipage}
 	\vspace{.5ex}
 }
@@ -261,19 +257,19 @@
 % definitions for remaining signatures
 % Supervisor
 \newcommand{\thesissupervisor}[3]{
-	\newcommand{\showthesissupervisor}{\thesisremainingsignatures{#1}{Supervisor,}{#2, #3}}
+	\newcommand{\showthesissupervisor}{\thesisremainingsignatures{#1}{Supervisor,}{#2\\ #3}}
 }
 % Co-Supervisor
 \newcommand{\thesiscosupervisor}[3]{
-	\newcommand{\showthesiscosupervisor}{\thesisremainingsignatures{#1}{Co-Supervisor,}{#2, #3}}
+	\newcommand{\showthesiscosupervisor}{\thesisremainingsignatures{#1}{Co-Supervisor,}{#2\\#3}}
 }
 % Head of Department
 \newcommand{\thesisheadofdepartment}[2]{
-	\newcommand{\showthesisheadofdepartment}{\thesisremainingsignatures{#1}{Head of the Department of}{#2}}
+	\newcommand{\showthesisheadofdepartment}{\thesisremainingsignatures{#1}{Head of the Department of\\}{#2}}
 }
 % Dean of Graduate School
 \newcommand{\thesisdeanofgraduateschool}[1]{
-	\newcommand{\showthesisdeanofgraduateschool}{\thesisremainingsignatures{#1}{Dean of the}{Graduate School of Engineering and Sciences}}
+	\newcommand{\showthesisdeanofgraduateschool}{\thesisremainingsignatures{#1}{Dean of the}{Graduate School of\\Engineering and Sciences}}
 }
 \newcommand{\signaturedate}[3]{\newcommand{\showsignaturedate}{#1 / #2 / #3}}
 
