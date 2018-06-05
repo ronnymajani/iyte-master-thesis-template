@@ -281,29 +281,6 @@ You can directly write Turkish characters in your document, so long as you save 
 
 
 
-## References
-
-You can use any references package and style you like. 
-Although If you wish to use the Chicago citation style we recommend you do the following:
-
-1. At the beginning of your main text file, right **after** the `\documentclass{iyte}` command, add the following commands:
-   ```latex
-   \usepackage[authordate,strict,backend=bibtex,bibencoding=inputenc]{biblatex-chicago}
-   \addbibresource{name-of-your-references-bib-file}
-   ```
-   *This will require you to install the `biblatex-chicago` package.*
-
-2. At the end of your main tex file, right **before** the final `\end{document}` command, add the following commands:
-
-   ```latex
-   \nocite{*}
-   \printbibliography[title=References]
-   ```
-
-
-
-
-
 ## Hyperref
 
 If you wish to use the `hyperref` package in your document to enable links and URLs in the pdf, just add the following commands:
