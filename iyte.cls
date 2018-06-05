@@ -341,7 +341,7 @@
 % https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/
 % https://tex.stackexchange.com/a/53901
 \usepackage[nottoc]{tocbibind} % make LoF and LoT show up in ToC
-\RequirePackage{tocloft}
+\RequirePackage[titles]{tocloft}
 % Titles
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \renewcommand{\listtablename}{LIST OF TABLES}
@@ -353,6 +353,14 @@
 \renewcommand{\cftafterlottitle}{\hspace*{\fill}}
 \renewcommand{\cftloftitlefont}{\hspace*{\fill}\thesisbigfont\bfseries}
 \renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+% Add "CHAPTER" word in ToC
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{.}
+%\addtolength{\cftchapnumwidth}{60pt}
+\newlength{\mylength}
+\settowidth{\mylength}{\cftchappresnum\cftchapaftersnum}
+\addtolength\cftchapnumwidth{\mylength}
 
 % Configure List of Tables and List of Figures: add 'Table'/'Figure' and 'Page'
 % https://tex.stackexchange.com/a/346301
@@ -405,3 +413,14 @@
 	\renewcommand{\refname}{REFERENCES}
 \fi
 
+
+% Appendices
+%-----------
+\RequirePackage[toc,title]{appendix}
+\AtBeginDocument{\renewcommand\appendixname{APPENDIX}}
+\newenvironment{thesisappendices}{
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
+\begin{appendices}
+}{
+\end{appendices}
+}

@@ -257,6 +257,7 @@ How to use this class:
 - `tocloft` used to modify the format of the *Table of Contents*, *List of Figures*, and *List of Tables*
 - `textpos` used to force the absolute positioning of the elements in the Title Page
 - `footmisc` used to set the footnotes left margin
+- `appendix` used to provide appendices
 
 
 
@@ -322,6 +323,21 @@ And when you want to add the references section at the end of your document (but
 ```
 
 
+
+
+
+## Appendices
+
+This class defines an environment for adding appendices. Simple add the `thesisappendices` environment near the end of your document:
+
+```latex
+\begin{thesisappendices}
+	\chapter{Misc}
+	The contents...
+\end{thesisappendices}
+```
+
+For each appendix simple call the `\chapter{title}` command.
 
 
 
