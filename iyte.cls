@@ -362,9 +362,9 @@
 \renewcommand\cftchappresnum{\chaptername~}
 \renewcommand\cftchapaftersnum{.}
 %\addtolength{\cftchapnumwidth}{60pt}
-\newlength{\mylength}
-\settowidth{\mylength}{\cftchappresnum\cftchapaftersnum}
-\addtolength\cftchapnumwidth{\mylength}
+\newlength{\mytoclength}
+\settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
+\addtolength\cftchapnumwidth{\mytoclength}
 
 % Set indentation of ToC entries
 \setlength{\cftsecindent}{5.5em}
@@ -380,7 +380,13 @@
 \newlength{\latexpnumwidth}
 \setlength{\latexpnumwidth}{\@pnumwidth}
 \renewcommand{\cfttabpresnum}{\tablename~}
-\addtolength{\cfttabnumwidth}{25pt}
+
+% set spacnig between Table number and table label in LoT
+%\addtolength{\cfttabnumwidth}{25pt}
+\newlength{\mylotlength}
+\settowidth{\mylotlength}{\cfttabpresnum\cfttabaftersnum}
+\addtolength\cfttabnumwidth{\mylotlength}
+
 \let\origcftdot\cftdot
 \addtocontents{lot}{\protect\cftsetpnumwidth{25pt}}
 % list of Figures Format
@@ -388,9 +394,16 @@
 \addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\tablename}~}}{\textbf{Page}}{}{}} % Write the header line
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
 \addtocontents{lot}{\vskip\baselineskip\par}% Some vertical spacing 
+
 % List of Figures
 \renewcommand{\cftfigpresnum}{\figurename~}
-\addtolength{\cftfignumwidth}{25pt}
+
+% set spacnig between Figure number and figure label in LoF
+%\addtolength{\cftfignumwidth}{30pt}
+\newlength{\myloflength}
+\settowidth{\myloflength}{\cftfigpresnum\cftfigaftersnum}
+\addtolength\cftfignumwidth{\myloflength}
+
 \let\origcftdot\cftdot
 \addtocontents{lof}{\protect\cftsetpnumwidth{25pt}}
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
