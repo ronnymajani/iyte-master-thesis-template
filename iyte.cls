@@ -92,13 +92,13 @@
 % Sections
 %----------------------------
 % https://tex.stackexchange.com/a/392015
-\setcounter{secnumdepth}{6}
 \makeatletter
 \renewcommand\subparagraph{%
 	\@startsection {subparagraph}{5}{\z@ }{3.25ex \@plus 1ex
 		\@minus .2ex}{-1em}{\normalfont \normalsize \bfseries }}%
 \makeatother
-
+\newcommand{\subsubsubsection}{\paragraph}
+\newcommand{\subsubsubsubsection}{\subparagraph}
 
 % Sections
 %----------------------------
@@ -339,6 +339,9 @@
 
 % Table of Content and List of Figures and Tables:
 %-----------
+% Make paragraphs and subpagraphs show up in ToC (they act like a subsubsubsection)
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 % https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/
 % https://tex.stackexchange.com/a/53901
 \usepackage[nottoc]{tocbibind} % make LoF and LoT show up in ToC
@@ -362,6 +365,13 @@
 \newlength{\mylength}
 \settowidth{\mylength}{\cftchappresnum\cftchapaftersnum}
 \addtolength\cftchapnumwidth{\mylength}
+
+% Set indentation of ToC entries
+\setlength{\cftsecindent}{5.5em}
+\setlength{\cftsubsecindent}{6.25em}
+\setlength{\cftsubsubsecindent}{7em}
+\setlength{\cftparaindent}{7.75em}
+\setlength{\cftsubparaindent}{8.5em}
 
 % Configure List of Tables and List of Figures: add 'Table'/'Figure' and 'Page'
 % https://tex.stackexchange.com/a/346301

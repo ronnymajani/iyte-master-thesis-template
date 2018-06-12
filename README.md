@@ -219,6 +219,19 @@ How to use this class:
 
 
 
+##### Sections Commands
+
+```latex
+\chapter{}
+\section{}
+\subsection{}
+\subsubsection{}
+\subsubsubsection{} or \paragraph{}
+\subsubsubsubsection{} or \subparagraph{}
+```
+
+for your convenience, we provided the aliases `\subsubsubsection` and `\subsubsubsubsection` which are equivalent to the `\paragraph` and `\subpargraph`  commands respectively. 
+
 
 
 ## Overview of this Class:
