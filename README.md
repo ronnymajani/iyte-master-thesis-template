@@ -251,6 +251,8 @@ for your convenience, we provided the aliases `\subsubsubsection` and `\subsubsu
 - There is no spacing between consecutive paragraphs
 - **2x1.5** spacing is used before and after each heading/subheading
 - **2x1.5** spacing is used between the chapter number and it's title
+- **2x1.5 **spacing is used before and after equations
+  - *This is still a bit buggy, so we suggest you write your equation environments directly after the relevant text, and do not separate the text and equation environment by a blank line.*
 - footnotes' font size is **10pt**, their left margin is **1cm**, and their line separator is **5cm** wide
 
 

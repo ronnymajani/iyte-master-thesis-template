@@ -448,3 +448,15 @@
 }{
 \end{appendices}
 }
+
+
+% Equations:
+%-----------
+% https://tex.stackexchange.com/a/32919
+% set spacing above and below equations
+\AtBeginDocument{%
+	\setlength{\belowdisplayskip}{2\baselineskip}%
+	\setlength{\belowdisplayshortskip}{2\baselineskip}%
+	\setlength{\abovedisplayskip}{2\baselineskip}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+}
