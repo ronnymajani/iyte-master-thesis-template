@@ -24,12 +24,14 @@
 
 \begin{titlepage}
 	% Commands for positioning 'textbox' elements in the page
+	\makeatletter
 	\newcommand{\fromtop}[1]{%
-		\dimexpr+2.5cm+#1\relax
+		\dimexpr+\Gm@tmargin+#1\relax
 	}
 	\newcommand{\fromleft}[1]{%
-		\dimexpr+3.5cm+#1\relax
+		\dimexpr+\Gm@bindingoffset+\Gm@lmargin+#1\relax
 	}
+	\makeatother
 	\newcommand{\textboxwidth}{\textwidth}
 	\newcommand{\fromleftoffset}{\fromleft{0cm}}
 	\setlength{\TPHorizModule}{\textwidth}
@@ -54,18 +56,14 @@
 				\showthesisdegree\linebreak\\
 				in \showthesismajor
 			}
-		\end{textblock*}
 		
-		% Author
-		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{23.5\baselineskip})
+			\vspace*{4\baselineskip}
 			\subtitlefont{
 				by\\
 				\showthesisauthor
 			}
-		\end{textblock*}
-	
-		% Date
-		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{31.5\baselineskip})
+		
+			\vspace*{7\baselineskip}
 			\subtitlefont{\showthesisdate}
 			
 			\subtitlefont{  \.{I}ZM\.{I}R}
