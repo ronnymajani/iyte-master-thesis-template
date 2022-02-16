@@ -60,7 +60,7 @@
 % --- Class structure: declaration of options part
 % ---
 % Page layout
-\RequirePackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\RequirePackage[a4paper,bindingoffset=1cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, foot=0.5cm]{geometry}
 
 
 
@@ -149,6 +149,7 @@
 \fancyfoot{}
 % Set the right side of the footer to be the page number
 \fancyfoot[R]{\thepage}
+\fancyfootoffset[R]{0.5cm}
 % Redefine plain style, which is used for titlepage and chapter beginnings
 % From https://tex.stackexchange.com/a/30230/828
 \fancypagestyle{plain}{%
