@@ -1,4 +1,3 @@
-*
 !.gitignore
 !README.md
 !.LICENSE.md
@@ -6,6 +5,7 @@
 !iyte.cls
 !template.tex
 !pages/*
+!docs/*
 
 
 ## Core latex/pdflatex auxiliary files:
