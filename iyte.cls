@@ -71,6 +71,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{newtxmath,newtxtext}
+\RequirePackage{graphicx}
 %\RequirePackage{mathptmx}
 % for font compile problems:
 % https://tex.stackexchange.com/a/152749
