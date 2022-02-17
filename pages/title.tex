@@ -24,9 +24,10 @@
 
 \begin{titlepage}
 	% Commands for positioning 'textbox' elements in the page
+	\singlespacing
 	\makeatletter
 	\newcommand{\fromtop}[1]{%
-		\dimexpr+\Gm@tmargin+#1\relax
+		\dimexpr+\Gm@tmargin+#1\baselineskip\relax
 	}
 	\newcommand{\fromleft}[1]{%
 		\dimexpr+\Gm@bindingoffset+\Gm@lmargin+#1\relax
@@ -34,20 +35,21 @@
 	\makeatother
 	\newcommand{\textboxwidth}{\textwidth}
 	\newcommand{\fromleftoffset}{\fromleft{0cm}}
+	\newcommand*{\vsinglespaces}[1]{\singlespacing\vspace*{#1\baselineskip}}
 	\setlength{\TPHorizModule}{\textwidth}
 	\setlength{\TPVertModule}{\textwidth}
 	% Commands for setting the fonts of this page
-	\newcommand*{\titlefont}[1]{\textbf{\onehalfspacing\fontsize{18pt}{27pt}\selectfont #1}}
-	\newcommand*{\subtitlefont}[1]{\textbf{\setstretch{0.75}\fontsize{14pt}{21pt}\selectfont#1}}
+	\newcommand*{\titlefont}[1]{\onehalfspacing\textbf{\fontsize{18pt}{27pt}\selectfont #1}\singlespacing}
+	\newcommand*{\subtitlefont}[1]{\onehalfspacing\textbf{\setstretch{0.75}\fontsize{14pt}{21pt}\selectfont#1}\singlespacing}
 	% Title Page main content
 	\begin{center}
 		% Thesis Title
-		\vspace*{3\baselineskip}  % 3 x single spacing
+		\vsinglespaces{3}
 		\titlefont{
 			\showthesistitle
 		}
 		% Middle Block
-		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{13\baselineskip})
+		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{13})
 			\subtitlefont{
 				A Thesis Submitted to\\
 				the Graduate School of Engineering and Sciences of\\
@@ -57,18 +59,19 @@
 				in \showthesismajor
 			}
 		
-			\vspace*{4\baselineskip}
+			\vsinglespaces{4}
 			\subtitlefont{
 				by\\
 				\showthesisauthor
 			}
 		
-			\vspace*{7\baselineskip}
+			\vsinglespaces{7}
 			\subtitlefont{\showthesisdate}
 			
 			\subtitlefont{  \.{I}ZM\.{I}R}
 		\end{textblock*}
 	
 	\end{center}
+	\onehalfspacing
 \end{titlepage}
 \addtocounter{page}{1}  % add 1 to the page counter (so Title page counts as page i)
