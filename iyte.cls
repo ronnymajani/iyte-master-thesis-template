@@ -1,6 +1,6 @@
 %The MIT License (MIT) Ronny Majani
 %
-%Copyright (c) 2018 
+%Copyright (c) 2018
 %
 %Permission is hereby granted, free of charge, to any person obtaining a copy
 %of this software and associated documentation files (the "Software"), to deal
@@ -60,7 +60,7 @@
 % --- Class structure: declaration of options part
 % ---
 % Page layout
-\RequirePackage[a4paper,bindingoffset=1cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, foot=0.5cm]{geometry}
+\RequirePackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 
 
@@ -107,6 +107,11 @@
 \newcommand{\thesisbigfont}{\fontsize{16pt}{24pt}\selectfont\bfseries}
 \newcommand{\thesismediumfont}{\fontsize{14pt}{21pt}\selectfont}
 \RequirePackage{titlesec}
+// Adding dot after section numbering
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.{}}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.{}}
+\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.{}}
+
 
 % Format Sections
 \titleformat{\section}{\bfseries\thesismediumfont}{\thesection}{1em}{}
@@ -121,10 +126,11 @@
 \renewcommand\chaptername{CHAPTER}
 
 % Section Spacing
-\titlespacing*{\chapter}{0pt}{0pt}{2\baselineskip}
-\titlespacing*{\section}{0pt}{2\baselineskip}{2\baselineskip}
-\titlespacing*{\subsection}{0pt}{2\baselineskip}{2\baselineskip}
-\titlespacing*{\subsubsection}{0pt}{2\baselineskip}{2\baselineskip}
+% \titlespacing*{\chapter}{0pt}{0pt}{2\baselineskip}
+\titlespacing*{\chapter}{0pt}{-25pt}{2\baselineskip}
+\titlespacing*{\section}{0pt}{1.5\baselineskip}{1.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.5\baselineskip}{1.5\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{1.5\baselineskip}{1.5\baselineskip}
 \titlespacing*{\paragraph}{0pt}{2\baselineskip}{2\baselineskip}
 \titlespacing*{\subparagraph}{0pt}{2\baselineskip}{2\baselineskip}
 
@@ -237,7 +243,7 @@
 	\begin{minipage}{#3}%
 		\vspace{\signaturepagespacing}\namesigdatehrule{#4}\smallskip
 			\textbf{#1}
-	
+
 			#2
 	\end{minipage}
 	\vspace{.5ex}
@@ -289,14 +295,14 @@
 \makeatletter
 \renewenvironment{abstract}{%
 	\centering
-	
+
 	{\bfseries\thesisbigfont ABSTRACT}\\
- 	\vspace{\baselineskip}
-	
+ 	\vspace{1.5\baselineskip}
+
 	{\thesismediumfont\showthesistitle}\\
- 	\vspace{\baselineskip}
- 	
-	\quotation}{\newpage}
+ 	\vspace{1\baselineskip}}
+
+	}{\newpage}
 \makeatother
 
 
@@ -304,12 +310,12 @@
 \newenvironment{ozet}{%
 	\centering
 	{\bfseries\thesisbigfont \"{O}ZET}\\
-	\vspace{\baselineskip}
-		
+	\vspace{1.5\baselineskip}
+
 	{\thesismediumfont\showturkishthesistitle}\\
-	\vspace{\baselineskip}
-	
-	\quotation}{\newpage}
+	\vspace{\baselineskip}}
+
+	}{\newpage}
 \makeatother
 
 
@@ -362,11 +368,29 @@
 
 % Add "CHAPTER" word in ToC
 \renewcommand\cftchappresnum{\chaptername~}
-\renewcommand\cftchapaftersnum{.}
+% Bold font removed from ToC chapters (https://tex.stackexchange.com/a/115485)
+\renewcommand\cftchapfont{\mdseries}
+% Bold font removed from ToC chapter page numbers (https://tex.stackexchange.com/a/235119)
+\renewcommand{\cftchappagefont}{\mdseries}
 %\addtolength{\cftchapnumwidth}{60pt}
 \newlength{\mytoclength}
 \settowidth{\mytoclength}{\cftchappresnum\cftchapaftersnum}
 \addtolength\cftchapnumwidth{\mytoclength}
+
+% Dots added after ToC chapter numbers
+\renewcommand\cftchapaftersnum{.}
+
+% Space added between ToC chapters (https://tex.stackexchange.com/a/56550)
+\renewcommand\cftchapafterpnum{\vskip5pt}
+
+% Dots added to parts, chapters and sections
+% https://tex.stackexchange.com/questions/53898/how-to-get-lines-with-dots-in-the-table-of-contents-for-sections
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+% \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+% \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections (It is default in report and book class)
+
+% Reduce space between dots (https://tex.stackexchange.com/a/390001)
+\renewcommand{\cftdotsep}{1}
 
 % Set indentation of ToC entries
 \setlength{\cftsecindent}{5.5em}
@@ -383,7 +407,7 @@
 \setlength{\latexpnumwidth}{\@pnumwidth}
 \renewcommand{\cfttabpresnum}{\tablename~}
 
-% set spacnig between Table number and table label in LoT
+% set spacing between Table number and table label in LoT
 %\addtolength{\cfttabnumwidth}{25pt}
 \newlength{\mylotlength}
 \settowidth{\mylotlength}{\cfttabpresnum\cfttabaftersnum}
@@ -393,14 +417,18 @@
 \addtocontents{lot}{\protect\cftsetpnumwidth{25pt}}
 % list of Figures Format
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
-\addtocontents{lot}{\protect\contentsline{table}{\numberline{\textbf{\tablename}~}}{\textbf{Page}}{}{}} % Write the header line
+\addtocontents{lot}{\protect\contentsline{table}{\numberline{\underline{\textbf{\tablename}~}}}{\underline{\textbf{Page}}}{}{}} % Write the header line
 \addtocontents{lot}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
-\addtocontents{lot}{\vskip\baselineskip\par}% Some vertical spacing 
+\addtocontents{lot}{\vskip\baselineskip\par}% Some vertical spacing
+
+% Remove default indent (https://tex.stackexchange.com/a/240276)
+\setlength{\cftfigindent}{0cm}
+\setlength{\cfttabindent}{0cm}
 
 % List of Figures
 \renewcommand{\cftfigpresnum}{\figurename~}
 
-% set spacnig between Figure number and figure label in LoF
+% set spacing between Figure number and figure label in LoF
 %\addtolength{\cftfignumwidth}{30pt}
 \newlength{\myloflength}
 \settowidth{\myloflength}{\cftfigpresnum\cftfigaftersnum}
@@ -409,9 +437,15 @@
 \let\origcftdot\cftdot
 \addtocontents{lof}{\protect\cftsetpnumwidth{25pt}}
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{}} % Remove the dots
-\phantomsection\addtocontents{lof}{\protect\contentsline{figure}{\numberline{\textbf{\figurename}~}}{\textbf{Page}}{}{}} % Write the header line
+\phantomsection\addtocontents{lof}{\protect\contentsline{figure}{\numberline{\underline{\textbf{\figurename}~}}}{\underline{\textbf{Page}}}{}{}} % Write the header line
 \addtocontents{lof}{\protect\renewcommand{\protect\cftdot}{\origcftdot}}% Can be written 'expanded' and enable the dots again
-\addtocontents{lof}{\vskip\baselineskip\par}% Some vertical spacing 
+\addtocontents{lof}{\vskip\baselineskip\par}% Some vertical spacing
+% Remove extra line spacing between different chapter figures (https://tex.stackexchange.com/a/793)
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
+%
+\renewcommand\cftfigaftersnum{.}
+\renewcommand\cfttabaftersnum{.}
 \makeatother
 
 % fix for hyperref:
@@ -439,13 +473,26 @@
 	\renewcommand{\refname}{REFERENCES}
 \fi
 
+% Adjust space between bibliography entries
+\newlength{\bibitemsep}\setlength\bibitemsep{0.5\baselineskip}%
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+
+}
 
 % Appendices
 %-----------
 \RequirePackage[toc,title]{appendix}
 \AtBeginDocument{\renewcommand\appendixname{APPENDIX}}
+\AtBeginDocument{\renewcommand{\appendixtocname}{APPENDICES}}
 \newenvironment{thesisappendices}{
 \addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
+\addtocontents{toc}{\protect\vskip20pt}
+\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{1pt}}
 \begin{appendices}
 }{
 \end{appendices}
@@ -457,8 +504,8 @@
 % https://tex.stackexchange.com/a/32919
 % set spacing above and below equations
 \AtBeginDocument{%
-	\setlength{\belowdisplayskip}{2\baselineskip}%
-	\setlength{\belowdisplayshortskip}{2\baselineskip}%
-	\setlength{\abovedisplayskip}{2\baselineskip}%
+	\setlength{\belowdisplayskip}{1\baselineskip}%
+	\setlength{\belowdisplayshortskip}{1\baselineskip}%
+	\setlength{\abovedisplayskip}{1\baselineskip}%
 	\setlength{\abovedisplayshortskip}{0pt}%
 }
