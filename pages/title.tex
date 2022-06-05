@@ -1,6 +1,6 @@
 %The MIT License (MIT) Ronny Majani
 %
-%Copyright (c) 2018 
+%Copyright (c) 2018
 %
 %Permission is hereby granted, free of charge, to any person obtaining a copy
 %of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@
 	\setlength{\TPHorizModule}{\textwidth}
 	\setlength{\TPVertModule}{\textwidth}
 	% Commands for setting the fonts of this page
-	\newcommand*{\titlefont}[1]{\onehalfspacing\textbf{\fontsize{18pt}{27pt}\selectfont #1}\singlespacing}
+	\newcommand*{\titlefont}[1]{\onehalfspacing\textbf{\fontsize{18pt}{27pt}\selectfont{\strut#1\strut}}\singlespacing}
 	\newcommand*{\subtitlefont}[1]{\onehalfspacing\textbf{\setstretch{0.75}\fontsize{14pt}{21pt}\selectfont#1}\singlespacing}
 	% Title Page main content
 	\begin{center}
@@ -49,28 +49,28 @@
 			\showthesistitle
 		}
 		% Middle Block
-		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{13})
+		\begin{textblock*}{\textboxwidth}(\fromleftoffset,\fromtop{16})
 			\subtitlefont{
-				A Thesis Submitted to\\
-				the Graduate School of Engineering and Sciences of\\
+				A Thesis Submitted to \\
+				the Graduate School of\\
 				\.{I}zmir Institute of Technology\\
 				in Partial Fulfillment of the Requirements for the Degree of\linebreak\\
 				\showthesisdegree\linebreak\\
 				in \showthesismajor
 			}
-		
+
 			\vsinglespaces{4}
 			\subtitlefont{
 				by\\
 				\showthesisauthor
 			}
-		
+
 			\vsinglespaces{7}
 			\subtitlefont{\showthesisdate}
-			
+
 			\subtitlefont{  \.{I}ZM\.{I}R}
 		\end{textblock*}
-	
+
 	\end{center}
 	\onehalfspacing
 \end{titlepage}
